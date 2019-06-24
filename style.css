@@ -1,0 +1,81 @@
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    padding-top: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+}
+
+body
+{
+    background: url("body.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+.left,
+.right {
+    width: 50%;
+    height: 100%;
+    flex: 1;
+}
+
+.container h1 {
+    padding: 10px;
+    color: white;
+    text-shadow: 3px 3px 3px black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+
+}
+
+.container textarea {
+    padding: 20px;
+    border-radius: 5px;
+    border: 2px solid #008CBA;
+    text-align: center;
+    height: 50px;
+    width: 570px;
+    box-shadow: 2px 2px 2px black;
+}
+
+.container textarea::placeholder {
+    color: black;
+    font-size: 15px;
+}
+
+.container input {
+    padding: 15px;
+    border: 2px solid #008CBA;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px black;
+}
+
+.btn {
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px black;
+    background-color: #008CBA;
+
+    border: none;
+
+    color: white;
+    text-align: center;
+    font-size: 16px;
+
+    padding: 15px 25px;
+    margin: 10px;
+}
+
+.btn-main {
+    width: 50%;
+}
+
+.btn-task {
+    width: 15%;
+}

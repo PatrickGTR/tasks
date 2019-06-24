@@ -6,24 +6,27 @@ const refreshList = () => {
         $("#todolists")
         .append(
         `
-            <div class="input-group">
-                <input
-                    class="form-control "
-                    type="text" value="${item}"
-                    id="itemid-${index}"/>
+        <div class="input-group">
+            <input
+                class="form-control"
+                type="text" value="${item}"
+                id="itemid-${index}"/>
 
-                <button
-                    class="btn btn-primary btn-sm"
-                    id="edit"
-                    type="button"
-                    onclick="editFromList(${index})">Edit</button>
+            <button
+                style="margin-left: 5px;"
+                class="btn btn-primary btn-sm"
+                id="edit"
+                type="button"
+                onclick="editFromList(${index})">Edit</button>
 
-                <button
-                    class="btn btn-primary btn-sm"
-                    id="delete"
-                    type="button"
-                    onClick="removeFromList(${index})">Delete</button>
-            </div>
+            <button
+                style="margin-left: 5px;"
+                class="btn btn-primary btn-sm"
+                id="delete"
+                type="button"
+                onClick="removeFromList(${index})">Delete</button>
+        </div>
+        <br/>
         `);
     });
 }

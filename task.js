@@ -4,7 +4,7 @@ const refreshList = () => {
     $("#todolists").html(""); // clear and ready for appending.
 
     task_list.forEach( (item, index, array) => {
-
+        // create div element
         $('<div>')
             .attr({
                 class: `input-group`,
@@ -13,6 +13,7 @@ const refreshList = () => {
             })
             .appendTo('#todolists');
 
+        // create input element and attach to div
         $('<input>')
             .attr({
                 type: `text`,
@@ -22,6 +23,7 @@ const refreshList = () => {
             })
             .appendTo(`#itemdiv-${index}`);
 
+        // create button element and attach to div
         $('<button>Edit</button>')
             .attr({
                 style: `margin-left: 5px;`,
@@ -33,6 +35,7 @@ const refreshList = () => {
             })
             .appendTo(`#itemdiv-${index}`);
 
+        // create button element and attach to div
         $('<button>Delete</button>')
             .attr({
                 style: `margin-left: 5px;`,

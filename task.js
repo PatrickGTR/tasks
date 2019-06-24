@@ -2,32 +2,47 @@ const task_list = [];
 
 const refreshList = () => {
     $("#todolists").html(""); // clear and ready for appending.
+
     task_list.forEach( (item, index, array) => {
-        $("#todolists")
-        .append(
-        `
-        <div class="input-group">
-            <input
-                class="form-control"
-                type="text" value="${item}"
-                id="itemid-${index}"/>
 
-            <button
-                style="margin-left: 5px;"
-                class="btn btn-primary btn-sm"
-                id="edit"
-                type="button"
-                onclick="editFromList(${index})">Edit</button>
+        $('<div>')
+            .attr({
+                class: `input-group`,
+                id: `itemdiv-${index}`,
+                style: `padding-bottom: 10px;`
+            })
+            .appendTo('#todolists');
 
-            <button
-                style="margin-left: 5px;"
-                class="btn btn-primary btn-sm"
-                id="delete"
-                type="button"
-                onClick="removeFromList(${index})">Delete</button>
-        </div>
-        <br/>
-        `);
+        $('<input>')
+            .attr({
+                type: `text`,
+                value: `${item}`,
+                id: `itemid-${index}`,
+                class: `form-control`,
+            })
+            .appendTo(`#itemdiv-${index}`);
+
+        $('<button>Edit</button>')
+            .attr({
+                style: `margin-left: 5px;`,
+                class: `btn btn-primary btn-sm`,
+                id: `edit`,
+                type: `button`,
+                onclick: `editFromList(${index})`,
+                value: `Edit`
+            })
+            .appendTo(`#itemdiv-${index}`);
+
+        $('<button>Delete</button>')
+            .attr({
+                style: `margin-left: 5px;`,
+                class: `btn btn-primary btn-sm`,
+                id: `delete`,
+                type: `button`,
+                onclick: `removeFromList(${index})`
+            })
+            .appendTo(`#itemdiv-${index}`);
+
     });
 }
 

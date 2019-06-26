@@ -20,23 +20,23 @@
 <body>
 
 <div class="container">
-    <divs id=error></div>
+    <div id=error></div>
 </div>
 
 <div class="container">
     <div class="col-6">
         <h1>Add Task</h1>
-        <textarea
+        <input
+            type="text"
             class="form-control"
             placeholder="Write your tasks here"
-            id="todoInput"></textarea>
+            id="todoInput"/>
         <br />
         <button
+            id="btnadd"
             class="btn btn-primary btn-lg btn-block"
-            type="submit"
-            onclick="addToList()">Add task</button>
+            type="submit">Add task</button>
     </div>
-
     <div class="col-6">
         <h1>Tasks</h1>
         <div id="todolists"></div>

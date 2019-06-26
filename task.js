@@ -1,24 +1,29 @@
 $(document).on("click", "#btndelete", function() {
-    $(this).parent().remove();
+    task.remove($(this));
 });
 
-$(document).on("click", "#btnadd", function() {
-    const input = $("#todoInput").val();
+$(document).on("click", "#btnadd", () => task.add($("#todoInput").val()));
 
-    if(!input) {
-        return sendErrorMsg("Task cannot be empty.");
+class task {
+    static add(input) {
+        if(!input) {
+            return sendErrorMsg("Task cannot be empty.");
+        }
+
+        // clear input field
+        $("#todoInput").val("");
+
+        $(`<li>${input}<button class="btn-delete" id="btndelete">X</button></li>`)
+            .attr({
+                "style": "margin-bottom: 10px;",
+                "class": "form-control"
+            })
+            .appendTo("#todolists");
     }
-
-    // clear input field
-    $("#todoInput").val("");
-
-    $(`<li>${input}<button class="btn-delete" id="btndelete">X</button></li>`)
-        .attr({
-            "style": "margin-bottom: 10px;",
-            "class": "form-control"
-        })
-        .appendTo("#todolists");
-});
+    static remove(element) {
+        element.parent().remove();
+    }
+}
 
 sendErrorMsg = (err_msg) => {
     $("#error")

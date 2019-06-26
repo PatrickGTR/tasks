@@ -12,7 +12,7 @@ $(document).on("click", "#btnadd", function() {
     // clear input field
     $("#todoInput").val("");
 
-    $(`<li>${input}<button style="float: right;" class="btn btn-primary btn-sm" id="btndelete">X</button></li>`)
+    $(`<li>${input}<button class="btn-delete" id="btndelete">X</button></li>`)
         .attr({
             "style": "margin-bottom: 10px;",
             "class": "form-control"

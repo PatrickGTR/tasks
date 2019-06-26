@@ -27,3 +27,10 @@ body
     font-weight: bold;
 
 }
+
+.btn-delete {
+    border: none;
+    background-color: transparent;
+    float: right;
+    font-weight: bolder;
+}
